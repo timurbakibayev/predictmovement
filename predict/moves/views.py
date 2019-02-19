@@ -26,8 +26,13 @@ def index(request):
             "x": p_x,
             "y": p_y,
         })
+
+        # Here: prediction, matplotlib -> file
+        #
+
+
         print(df)
-        
+
 
     except:
         return render(request, "index.html", context={})
