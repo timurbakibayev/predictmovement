@@ -63,6 +63,6 @@ function tryPost() {
             body: JSON.stringify(moves),
         })
         .then(res => {
-            console.log(res);
+            window.location = "/";
         })
 }
