@@ -22,6 +22,7 @@ function InitThis() {
     canvas.mouseup(function (e) {
         mousePressed = false;
         moves.push(currentMove);
+        currentMove = [];
         console.log(JSON.stringify(moves));
         console.log(JSON.stringify(moves).length);
     });
