@@ -31,6 +31,7 @@ body {
     </head>
     <h1></h1>
     <div style="display: block; margin: auto;">
+        {% if first %}
         <div style="display: flex; flex-flow: column">
             {{ message }}
             <canvas id="myCanvas" width="400" height="400" style="border:2px solid black; display: block; margin: auto; background-color: #FFFFFF"></canvas>
@@ -38,9 +39,13 @@ body {
            <b><button onclick="tryPost()">SEND TO SERVER</button></b>
 
         </div>
+        {% else %}
         <div align="center">
             <img src="/media/{{ file }}" width="400" height="400">
         </div>
+       <b><button onclick="window.location='/'">START AGAIN</button></b>
+
+        {% endif %}
     </div>
     </html>
 </div>

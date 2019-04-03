@@ -96,4 +96,14 @@ def index(request):
 
     except Exception as e:
         print(str(e))
-        return render(request, "index.html", context={"file":last.last_file})
+    return render(request, "index.html", context={"first":True,"file":last.last_file})
+
+
+def result(request):
+    if len(Last.objects.all()) == 0:
+        last = Last()
+        last.save()
+
+    last = Last.objects.all()[0]
+
+    return render(request, "index.html", context={"first": False,"file":last.last_file})

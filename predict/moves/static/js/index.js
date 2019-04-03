@@ -64,6 +64,6 @@ function tryPost() {
             body: JSON.stringify(moves),
         })
         .then(res => {
-            window.location = "/";
+            window.location = "/result";
         })
 }
