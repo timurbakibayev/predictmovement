@@ -13,7 +13,6 @@ import os
 # Create your views here.
 @csrf_exempt
 def index(request):
-
     if len(Last.objects.all()) == 0:
         last = Last()
         last.save()

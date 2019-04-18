@@ -1,7 +1,51 @@
-body{
-	background-image:url(../images/picture1.png);
-	/*background-color: #c4dce8;*/
+body {
+min-width: 320 px;
+	font-size: 14px;
+	font-family: 'Copperplate Gothic Bold';
+	color: #1d2124;
+	background-color: #c4dce8;
 	background-repeat: no-repeat;
-	background-size: 100%;
+	page size: 98%;
+}
+image {
+
+	max-width: 100%;
+	max-width: 800px;
+	height: auto;
+}
+a {
+	color: black;
 }
 
+a:hover {
+	color: black;
+}
+.navbar-nav {
+    display:table;
+    width:100%;
+    margin: 0;
+}
+.navbar-nav > li {
+    float:none;
+    display:table-cell;
+    text-align:center;
+}
+
+div style {
+
+}
+
+div style {
+	width: 1000px;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+.div {
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+}
+.imgCenter {text-align:center;}
