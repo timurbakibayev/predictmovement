@@ -161,14 +161,14 @@ body {
         {% if first %}
         <div style="display: flex; flex-flow: column">
             {{ message }}
-            <canvas id="myCanvas" width="800" height="800" style="border:2px solid black; display: block; margin: auto; background-color: #FFFFFF"></canvas>
+            <canvas id="myCanvas" width="300" height="300" style="border:2px solid black; display: block; margin: auto; background-color: #FFFFFF"></canvas>
             <br/><br/>
            <b><button onclick="tryPost()">SEND TO SERVER</button></b>
 
         </div>
         {% else %}
         <div align="center">
-            <img src="/media/{{ file }}" width="800" height="800">
+            <img src="/media/{{ file }}" width="300" height="300">
         </div>
 
        <b><button onclick="window.location='/'">START AGAIN</button></b>
