@@ -1,443 +1,473 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
+
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/static/js/index.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Predict movement</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <!-- GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+    <link href="https://keenthemes.com/preview/acidus/vendor/simple-line-icons/simple-line-icons.min.css"
+          rel="stylesheet" type="text/css"/>
+    <link href="https://keenthemes.com/preview/acidus/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css"/>
+
+    <!-- PAGE LEVEL PLUGIN STYLES -->
+    <link href="https://keenthemes.com/preview/acidus/css/animate.css" rel="stylesheet">
+    <link href="https://keenthemes.com/preview/acidus/vendor/swiper/css/swiper.min.css" rel="stylesheet"
+          type="text/css"/>
+
+    <!-- THEME STYLES -->
+    <link href="https://keenthemes.com/preview/acidus/css/layout.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico"/>
+
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        </head> -->
     <style>
-    .center {
-        text-align: center;
-    }
+        body {
+            color: black;
+            font-size: 150%;
+            text-align: center;
 
-    .no-js {
-    }
+        }
 
-    #about {
-    }
-
-    #work {
-    }
-
-    #class
-
-    #links {
-    }
     </style>
-     <link rel="stylesheet" href="/media/css/style.css"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> PREDICT MOVEMENT</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+
+    <!-- GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+    <link href="https://keenthemes.com/preview/acidus/vendor/simple-line-icons/simple-line-icons.min.css"
+          rel="stylesheet" type="text/css"/>
+    <link href="https://keenthemes.com/preview/acidus/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css"/>
+
+    <!-- PAGE LEVEL PLUGIN STYLES -->
+    <link href="https://keenthemes.com/preview/acidus/css/animate.css" rel="stylesheet">
+    <link href="https://keenthemes.com/preview/acidus/vendor/swiper/css/swiper.min.css" rel="stylesheet"
+          type="text/css"/>
+
+    <!-- THEME STYLES -->
+    <link href="https://keenthemes.com/preview/acidus/css/layout.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico"/>
+
 </head>
 
 
 <body onload="InitThis();">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="/static/js/index.js"></script>
-<div style="display: flex; flex-flow: row">
-    <!DOCTYPE html>
-    <html lang="en" class="no-js">
-    <head>
-         <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Predict movement</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta content="width=device-width, initial-scale=1" name="viewport"/>
-        <meta content="" name="description"/>
-        <meta content="" name="author"/>
-         <!-- GLOBAL MANDATORY STYLES -->
-        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
-        <link href="https://keenthemes.com/preview/acidus/vendor/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-        <link href="https://keenthemes.com/preview/acidus/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
-        <!-- PAGE LEVEL PLUGIN STYLES -->
-        <link href="https://keenthemes.com/preview/acidus/css/animate.css" rel="stylesheet">
-        <link href="https://keenthemes.com/preview/acidus/vendor/swiper/css/swiper.min.css" rel="stylesheet" type="text/css"/>
+{#<div style="display: flex; flex-flow: row">#}
+<!--========== HEADER ==========-->
+<header class="header">
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="menu-container">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="toggle-icon"></span>
+                </button>
 
-        <!-- THEME STYLES -->
-        <link href="https://keenthemes.com/preview/acidus/css/layout.min.css" rel="stylesheet" type="text/css"/>
+            </div>
 
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="favicon.ico"/>
-
-    <!-- Bootstrap CSS -->
-<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head> -->
-        <style>
-body {
-        color: black; font-size: 150%; text-align:  center;
-
-}
-
-</style>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> PREDICT MOVEMENT</title>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta content="width=device-width, initial-scale=1" name="viewport"/>
-        <meta content="" name="description"/>
-        <meta content="" name="author"/>
-
-        <!-- GLOBAL MANDATORY STYLES -->
-        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
-        <link href="https://keenthemes.com/preview/acidus/vendor/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-        <link href="https://keenthemes.com/preview/acidus/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-
-        <!-- PAGE LEVEL PLUGIN STYLES -->
-        <link href="https://keenthemes.com/preview/acidus/css/animate.css" rel="stylesheet">
-        <link href="https://keenthemes.com/preview/acidus/vendor/swiper/css/swiper.min.css" rel="stylesheet" type="text/css"/>
-
-        <!-- THEME STYLES -->
-        <link href="https://keenthemes.com/preview/acidus/css/layout.min.css" rel="stylesheet" type="text/css"/>
-
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="favicon.ico"/>
-
-    </head>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse nav-collapse">
+                <div class="menu-container">
+                    <ul class="navbar-nav navbar-nav-right">
+                        <!-- Home -->
+                        <li class="nav-item">
+                            <a class="nav-item-child active" href="/">
 
 
-     <body>
+                                Home
+                            </a>
+                        </li>
+                        <!-- End Home -->
 
-        <!--========== HEADER ==========-->
-        <header class="header">
-            <!-- Navbar -->
-            <nav class="navbar" role="navigation">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="menu-container">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="toggle-icon"></span>
-                        </button>
+                        <!-- About -->
+                        <li class="nav-item">
+                            <a class="nav-item-child" href="/result#about">
+                                About
+                            </a>
+                        </li>
+                        <!-- End About -->
 
-                    </div>
+                        <!-- Work -->
+                        <li class="nav-item">
+                            <a class="nav-item-child" href="/result#work">
+                                Work
+                            </a>
+                        </li>
+                        <!-- End Work -->
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse nav-collapse">
-                        <div class="menu-container">
-                            <ul class="navbar-nav navbar-nav-right">
-                                <!-- Home -->
-                                <li class="nav-item">
-                                  <a class="nav-item-child active" href="/">
-
-
-                                        Home
-                                    </a>
-                                </li>
-                                <!-- End Home -->
-
-                                <!-- About -->
-                                <li class="nav-item">
-                                    <a class="nav-item-child" href="/result#about">
-                                        About
-                                    </a>
-                                </li>
-                                <!-- End About -->
-
-                                <!-- Work -->
-                                <li class="nav-item">
-                                    <a class="nav-item-child" href="/result#work">
-                                        Work
-                                    </a>
-                                </li>
-                                <!-- End Work -->
-
-                                <!-- links -->
-                                <li class="nav-item">
-                                    <a class="nav-item-child" href="/result#links">
-                                        Links
-                                    </a>
-                                </li>
-                                <!-- End links -->
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- End Navbar Collapse -->
+                        <!-- links -->
+                        <li class="nav-item">
+                            <a class="nav-item-child" href="/result#links">
+                                Links
+                            </a>
+                        </li>
+                        <!-- End links -->
+                    </ul>
                 </div>
-            </nav>
-            <!-- Navbar -->
-        </header>
+            </div>
+            <!-- End Navbar Collapse -->
+        </div>
+    </nav>
+    <!-- Navbar -->
+</header>
 
 
-
-    <h1></h1>
-    <div style="display: block; margin: auto;">
-        {% if first %}
+<h1></h1>
+<div style="display: block; margin: auto;">
+    {% if first %}
         <div style="display: flex; flex-flow: column">
             {{ message }}
-            <canvas id="myCanvas" width="300" height="300" style="border:2px solid black; display: block; margin: auto; background-color: #FFFFFF"></canvas>
+            <canvas id="myCanvas" width="300" height="300"
+                    style="border:2px solid black; display: block; margin: auto; background-color: #FFFFFF"></canvas>
             <br/><br/>
-           <b><button onclick="tryPost()">SEND TO SERVER</button></b>
+            <b>
+                <button onclick="tryPost()">SEND TO SERVER</button>
+            </b>
 
         </div>
-        {% else %}
+    {% else %}
         <div align="center">
             <img src="/media/{{ file }}" width="300" height="300">
         </div>
 
-       <b><button onclick="window.location='/'">START AGAIN</button></b>
+        <b>
+            <button onclick="window.location='/'">START AGAIN</button>
+        </b>
 
-        {% endif %}
-    </div>
-    </html>
+    {% endif %}
 </div>
 
 
 <div class="bg-color-sky-light">
-            <div class="content-md container">
-                <!-- Masonry Grid -->
-                <div class="masonry-grid">
-                    <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-6"></div>
-                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-6">
-                        <!-- Work -->
-                        <div class="work">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="media/images/camel.jpg" width="400" height="400">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Animal movement</h3>
-                                <p class="color-white margin-b-0">We can track the movements of animals</p>
-                            </div>
-                            <a class="content-wrapper-link" href="#"></a>
-                        </div>
-                        <!-- End Work -->
+    <div class="content-md container">
+        <!-- Masonry Grid -->
+        <div class="masonry-grid">
+            <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-6"></div>
+            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-6">
+                <!-- Work -->
+                <div class="work">
+                    <div class="work-overlay">
+                        <img class="full-width img-responsive" src="media/images/camel.jpg" width="400"
+                             height="400">
                     </div>
-                    <div id="about" class="masonry-grid-item col-xs- col-sm-6 col-md-6">
-                        <!-- Work -->
-                        <div class="work">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="media/images/walking.jpg" width="800" height="800">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Car paths</h3>
-                                <p class="color-white margin-b-0">We can track different movements</p>
-                            </div>
-                            <a class="content-wrapper-link" href="#"></a>
-                        </div>
-                        <!-- End Work -->
+                    <div class="work-content">
+                        <h3 class="color-white margin-b-5">Animal movement</h3>
+                        <p class="color-white margin-b-0">We can track the movements of animals</p>
                     </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-6">
-                        <!-- Work -->
-                        <div class="work">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="media/images/prediction.jpg" width="800" height="800">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Weather prediction</h3>
-                                <p class="color-white margin-b-0">We can predict weather events like hurricanes</p>
-                            </div>
-                            <a class="content-wrapper-link" href="#"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
+                    <a class="content-wrapper-link" href="#"></a>
                 </div>
-                <!-- End Masonry Grid -->
+                <!-- End Work -->
+            </div>
+            <div id="about" class="masonry-grid-item col-xs- col-sm-6 col-md-6">
+                <!-- Work -->
+                <div class="work">
+                    <div class="work-overlay">
+                        <img class="full-width img-responsive" src="media/images/walking.jpg" width="800"
+                             height="800">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="color-white margin-b-5">Car paths</h3>
+                        <p class="color-white margin-b-0">We can track different movements</p>
+                    </div>
+                    <a class="content-wrapper-link" href="#"></a>
+                </div>
+                <!-- End Work -->
+            </div>
+            <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-6">
+                <!-- Work -->
+                <div class="work">
+                    <div class="work-overlay">
+                        <img class="full-width img-responsive" src="media/images/prediction.jpg" width="800"
+                             height="800">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="color-white margin-b-5">Weather prediction</h3>
+                        <p class="color-white margin-b-0">We can predict weather events like hurricanes</p>
+                    </div>
+                    <a class="content-wrapper-link" href="#"></a>
+                </div>
+                <!-- End Work -->
             </div>
         </div>
-        <!-- End Work -->
+        <!-- End Masonry Grid -->
+    </div>
+</div>
+<!-- End Work -->
 
-        <!-- Features -->
-        <div class="section-seperator">
-            <div id="work" class="content-md container">
-                <div class="row">
-                    <div class="col-sm-4 sm-margin-b-50">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
-                            <h3>Animal movement</h3>
-                            <p>We can track the movements of animals</p>
-                            <a class="link" href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 sm-margin-b-50">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".2s">
-                            <h3>Car paths</h3>
-                            <p>We can track different movements</p>
-                            <a class="link" href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".1s">
-                            <h3>Weather prediction</h3>
-                            <p>We can predict weather events like hurricanes</p>
-                            <a class="link" href="#">Read More</a>
-                        </div>
-                    </div>
+<!-- Features -->
+<div class="section-seperator">
+    <div id="work" class="content-md container">
+        <div class="row">
+            <div class="col-sm-4 sm-margin-b-50">
+                <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
+                    <h3>Animal movement</h3>
+                    <p>We can track the movements of animals</p>
+                    <a class="link" href="#">Read More</a>
                 </div>
-                <!--// end row -->
+            </div>
+            <div class="col-sm-4 sm-margin-b-50">
+                <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".2s">
+                    <h3>Car paths</h3>
+                    <p>We can track different movements</p>
+                    <a class="link" href="#">Read More</a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".1s">
+                    <h3>Weather prediction</h3>
+                    <p>We can predict weather events like hurricanes</p>
+                    <a class="link" href="#">Read More</a>
+                </div>
             </div>
         </div>
-        <!-- End Features -->
+        <!--// end row -->
+    </div>
+</div>
+<!-- End Features -->
 
-        <!-- Clients -->
+<!-- Clients -->
+<div class="content-md container">
+    <!-- Work -->
+    <div class="bg-color-sky-light overflow-h">
         <div class="content-md container">
-        <!-- Work -->
-        <div class="bg-color-sky-light overflow-h">
-            <div class="content-md container">
-                <div class="row margin-b-40">
-                    <div class="col-sm-6">
-                        <h2>Work</h2>
-                        <p align="justify"> <big><big> <strong>
-                            This work describes an algorithm for geographical coordinates processing using polynomial regression to calculate the common behavior of a
-                            movement. The primary advantage of this algorithm is having a map of traectories in any region. We have used
-                            Python programming language together with scikit-learn and matplotlib libraries for machine learning and visualization. In the end we try to predict several steps of
-                            the movement of all objects on the map.
-                        </strong></big></big></p>
-                    </div>
-                </div>
-                <!--// end row -->
-
-                <!-- Masonry Grid -->
-                <div class="masonry-grid">
-                    <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
-
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
-                        <!-- Work -->
-                        <div class="work">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="/media/images/hurricane.jpg" width="800" height="800">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Weather prediction</h3>
-                                <p class="color-white margin-b-0">We can predict weather events like hurricanes.</p>
-                            </div>
-                            <a class="content-wrapper-link" href="#"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
-                        <!-- Work -->
-                        <div class="work">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="/media/images/carpath.png" width="800" height="800">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Car paths</h3>
-                                <p class="color-white margin-b-0">We can track different movements</p>
-                            </div>
-                            <a class="content-wrapper-link" href="#"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-12">
-                        <!-- Work -->
-                        <div class="work">
-                            <div class="work-overlay">
-                                 <img src="/media/images/02.jpg" align="middle" width="500" height="300">
-
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Animal movenment</h3>
-                                <p class="color-white margin-b-0">We can track the movements of animals</p>
-                                <p class="color-white margin-b-0"></p>
-                            </div>
-                            <a class="content-wrapper-link" href="#"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-
-                </div>
-                <!-- End Masonry Grid -->
-            </div>
-        </div>
-        <!-- End Work -->
-
-        <!-- Testimonials -->
-        <div class="content-md container">
-            <div class="row">
-                <div class="col-sm-9">
-                    <h2>Links</h2>
-
-                    <!-- Swiper Testimonials -->
-                    <div class="swiper-slider swiper-testimonials">
-                        <!-- Swiper Wrapper -->
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div id="links" blockquote class="blockquote">
-                                    <div class="margin-b-20">
-                                        Toby A. Patterson et al. State–space models of individual animal
-movement. Trends in Ecology and Evolution , Volume 23 , Issue 2 , 87 –
-94.
-                                    </div>
-                                    <div class="margin-b-20">
-                                        Kordmahalleh, Mina Moradi, et al. &quot;Hurricane trajectory prediction via a sparse recurrent neural network.&quot; Proceedings of the 5th International Workshop on Climate Informatics.
-                                        2015, pp 2-3.
-                                    </div>
-                            <div class="swiper-slide">
-                                <blockquote class="blockquote">
-                                    <div class="margin-b-20">
-
-                                    </div>
-
-                                    <div class="margin-b-20">
-                                        Hong, Seungkyun, et al. &quot;Globenet: Convolutional neural networks for
-typhoon eye tracking from remote sensing imagery.&quot; arXiv preprint arXiv:1708.03417 (2017). Pages 2-4
-                                    </div>
-
-                                    <div class="margin-b-20">
-                                        Gaffney, S. and Smyth P. Trajectory Clustering with Mixtures of
-Regression Models. ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. 1999, pp. 267-272.
-                                    </div>
-                                    <div id="links" blockquote class="blockquote">
-                                    <div class="margin-b-20">
-                                        Ankerst, M., Breuning M. M., Kriegel, H. -P и Sander, J. OPTICS: Ordering Points to Identify the Clustering Structure. ACM SIGMOD
-                                        International Conference on Management of Data. 1999, pp. 102-123.
-                                    </div>
-                                     <div class="margin-b-20">
-                                        Chen, L., Ä Ozsu, M. T., and Oria, V. Robust and Fast Similarity Search
-for Moving Object Trajectories. In Proc. ACM SIGMOD International Conference on Management of Data. 2005, pp 45-87.
-                                    </div>
-                                        <div id="links" blockquote class="blockquote">
-                                    <div class="margin-b-20">
-                                        Raschka, Sebastian. Python machine learning. Packt Publishing Ltd, 2015. Pages 313- 314
-                                    </div>
-                                    <div class="margin-b-20">
-                                        Matsubara, Yasuko, et al. &quot;F-trail: Finding patterns in taxi
-trajectories.&quot;Pacific-Asia Conference on Knowledge Discovery and Data
-Mining. Springer, Berlin, Heidelberg, 2013. Pages 3-4.
-                                    </div>
-                                    <div id="links" blockquote class="blockquote">
-                                    <div class="margin-b-20">
-                                        Morzy, Mikołaj. &quot;Mining frequent trajectories of moving objects for
-location prediction.&quot;International Workshop on Machine Learning and
-Data Mining in Pattern Recognition. Springer, Berlin, Heidelberg, 2007. Pages 7-9.
-                                    </div>
-                                    <div class="margin-b-20">
-                                     S. Nassar, J. Sander, and C. Cheng, “Incremental and Effective Data
-Summarization for Dynamic Hierarchical Clustering,” Proc. ACM SIGMOD Int’l Conf. Management of Data (SIGMOD ’04), 2004. Pages. 467-478.
-                                    </div>
-                                    <div id="links" blockquote class="blockquote">
-                                    <div class="margin-b-20">
-                                     Jae-Gil Lee, Jiawei Han et al. Trajectory Clustering: A Partition-and-
-Group Framework. Proceedings of the 2007 ACM SIGMOD international conference on Management of data. Pages 593-604
-                                    </div>
-                        <div class="swiper-testimonials-pagination"></div>
-                    </div>
-                    <!-- End Swiper Testimonials -->
+            <div class="row margin-b-40">
+                <div class="col-sm-6">
+                    <h2>Work</h2>
+                    <p align="justify"><big><big> <strong>
+                        This work describes an algorithm for geographical coordinates processing using polynomial
+                        regression to calculate the common behavior of a
+                        movement. The primary advantage of this algorithm is having a map of traectories in any
+                        region.
+                        We have used
+                        Python programming language together with scikit-learn and matplotlib libraries for machine
+                        learning and visualization. In the end we try to predict several steps of
+                        the movement of all objects on the map.
+                    </strong></big></big></p>
                 </div>
             </div>
             <!--// end row -->
+
+            <!-- Masonry Grid -->
+            <div class="masonry-grid">
+                <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
+
+                <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
+                    <!-- Work -->
+                    <div class="work">
+                        <div class="work-overlay">
+                            <img class="full-width img-responsive" src="/media/images/hurricane.jpg" width="800"
+                                 height="800">
+                        </div>
+                        <div class="work-content">
+                            <h3 class="color-white margin-b-5">Weather prediction</h3>
+                            <p class="color-white margin-b-0">We can predict weather events like hurricanes.</p>
+                        </div>
+                        <a class="content-wrapper-link" href="#"></a>
+                    </div>
+                    <!-- End Work -->
+                </div>
+                <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
+                    <!-- Work -->
+                    <div class="work">
+                        <div class="work-overlay">
+                            <img class="full-width img-responsive" src="/media/images/carpath.png" width="800"
+                                 height="800">
+                        </div>
+                        <div class="work-content">
+                            <h3 class="color-white margin-b-5">Car paths</h3>
+                            <p class="color-white margin-b-0">We can track different movements</p>
+                        </div>
+                        <a class="content-wrapper-link" href="#"></a>
+                    </div>
+                    <!-- End Work -->
+                </div>
+                <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-12">
+                    <!-- Work -->
+                    <div class="work">
+                        <div class="work-overlay">
+                            <img src="/media/images/02.jpg" align="middle" width="500" height="300">
+
+                        </div>
+                        <div class="work-content">
+                            <h3 class="color-white margin-b-5">Animal movenment</h3>
+                            <p class="color-white margin-b-0">We can track the movements of animals</p>
+                            <p class="color-white margin-b-0"></p>
+                        </div>
+                        <a class="content-wrapper-link" href="#"></a>
+                    </div>
+                    <!-- End Work -->
+                </div>
+
+            </div>
+            <!-- End Masonry Grid -->
         </div>
-        <!-- End Testimonials -->
-        <!--========== END PAGE LAYOUT ==========-->
+    </div>
+    <!-- End Work -->
 
-        <!-- Back To Top -->
-        <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
+    <!-- Testimonials -->
+    <div class="content-md container">
+        <div class="row">
+            <div class="col-sm-9">
+                <h2>Links</h2>
 
-        <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-        <!-- CORE PLUGINS -->
-        <script src="https://keenthemes.com/preview/acidus/vendor/jquery.min.js" type="text/javascript"></script>
-        <script src="https://keenthemes.com/preview/acidus/vendor/jquery-migrate.min.js" type="text/javascript"></script>
-        <script src="https://keenthemes.com/preview/acidus/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+                <div id="links" blockquote class="blockquote">
+                    <div class="margin-b-20">
+                        Toby A. Patterson et al. State–space models of individual animal
+                        movement. Trends in Ecology and Evolution , Volume 23 , Issue 2 , 87 –
+                        94.
+                    </div>
+                    <div class="margin-b-20">
+                        Kordmahalleh, Mina Moradi, et al. &quot;Hurricane trajectory prediction via a
+                        sparse
+                        recurrent neural network.&quot; Proceedings of the 5th International Workshop on
+                        Climate Informatics.
+                        2015, pp 2-3.
+                    </div>
+                    <div class="swiper-slide">
+                        <blockquote class="blockquote">
+                            <div class="margin-b-20">
 
-        <!-- PAGE LEVEL PLUGINS -->
-        <script src="https://keenthemes.com/preview/acidus/vendor/jquery.easing.js" type="text/javascript"></script>
-        <script src="https://keenthemes.com/preview/acidus/vendor/jquery.back-to-top.js" type="text/javascript"></script>
-        <script src="https://keenthemes.com/preview/acidus/vendor/jquery.smooth-scroll.js" type="text/javascript"></script>
-        <script src="https://keenthemes.com/preview/acidus/vendor/jquery.wow.min.js" type="text/javascript"></script>
-        <script src="https://keenthemes.com/preview/acidus/vendor/swiper/js/swiper.jquery.min.js" type="text/javascript"></script>
-        <script src="https://keenthemes.com/preview/acidus/vendor/masonry/jquery.masonry.pkgd.min.js" type="text/javascript"></script>
-        <script src="https://keenthemes.com/preview/acidus/vendor/masonry/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+                            </div>
 
-        <!-- PAGE LEVEL SCRIPTS -->
-        <script src="https://keenthemes.com/preview/acidus/js/layout.min.js" type="text/javascript"></script>
-        <script src="https://keenthemes.com/preview/acidus/js/components/wow.min.js" type="text/javascript"></script>
-        <script src="https://keenthemes.com/preview/acidus/js/components/swiper.min.js" type="text/javascript"></script>
-        <script src="https://keenthemes.com/preview/acidus/js/components/masonry.min.js" type="text/javascript"></script>
+                            <div class="margin-b-20">
+                                Hong, Seungkyun, et al. &quot;Globenet: Convolutional neural networks
+                                for
+                                typhoon eye tracking from remote sensing imagery.&quot; arXiv preprint
+                                arXiv:1708.03417 (2017). Pages 2-4
+                            </div>
+
+                            <div class="margin-b-20">
+                                Gaffney, S. and Smyth P. Trajectory Clustering with Mixtures of
+                                Regression Models. ACM SIGKDD International Conference on Knowledge
+                                Discovery and Data Mining. 1999, pp. 267-272.
+                            </div>
+                            <div id="links" blockquote class="blockquote">
+                                <div class="margin-b-20">
+                                    Ankerst, M., Breuning M. M., Kriegel, H. -P и Sander, J. OPTICS:
+                                    Ordering Points to Identify the Clustering Structure. ACM SIGMOD
+                                    International Conference on Management of Data. 1999, pp. 102-123.
+                                </div>
+                                <div class="margin-b-20">
+                                    Chen, L., Ä Ozsu, M. T., and Oria, V. Robust and Fast Similarity
+                                    Search
+                                    for Moving Object Trajectories. In Proc. ACM SIGMOD International
+                                    Conference on Management of Data. 2005, pp 45-87.
+                                </div>
+                                <div id="links" blockquote class="blockquote">
+                                    <div class="margin-b-20">
+                                        Raschka, Sebastian. Python machine learning. Packt Publishing
+                                        Ltd,
+                                        2015. Pages 313- 314
+                                    </div>
+                                    <div class="margin-b-20">
+                                        Matsubara, Yasuko, et al. &quot;F-trail: Finding patterns in
+                                        taxi
+                                        trajectories.&quot;Pacific-Asia Conference on Knowledge
+                                        Discovery
+                                        and Data
+                                        Mining. Springer, Berlin, Heidelberg, 2013. Pages 3-4.
+                                    </div>
+                                    <div id="links" blockquote class="blockquote">
+                                        <div class="margin-b-20">
+                                            Morzy, Mikołaj. &quot;Mining frequent trajectories of moving
+                                            objects for
+                                            location prediction.&quot;International Workshop on Machine
+                                            Learning and
+                                            Data Mining in Pattern Recognition. Springer, Berlin,
+                                            Heidelberg, 2007. Pages 7-9.
+                                        </div>
+                                        <div class="margin-b-20">
+                                            S. Nassar, J. Sander, and C. Cheng, “Incremental and
+                                            Effective
+                                            Data
+                                            Summarization for Dynamic Hierarchical Clustering,” Proc.
+                                            ACM
+                                            SIGMOD Int’l Conf. Management of Data (SIGMOD ’04), 2004.
+                                            Pages.
+                                            467-478.
+                                        </div>
+                                        <div id="links" blockquote class="blockquote">
+                                            <div class="margin-b-20">
+                                                Jae-Gil Lee, Jiawei Han et al. Trajectory Clustering: A
+                                                Partition-and-
+                                                Group Framework. Proceedings of the 2007 ACM SIGMOD
+                                                international conference on Management of data. Pages
+                                                593-604
+                                            </div>
+                                            <div class="swiper-testimonials-pagination"></div>
+                                        </div>
+                                        <!-- End Swiper Testimonials -->
+                                    </div>
+                                </div>
+                                <!--// end row -->
+                            </div>
+                            <!-- End Testimonials -->
+                            <!--========== END PAGE LAYOUT ==========-->
+
+                            <!-- Back To Top -->
+                            <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
+
+                            <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+                            <!-- CORE PLUGINS -->
+                            <script src="https://keenthemes.com/preview/acidus/vendor/jquery.min.js"
+                                    type="text/javascript"></script>
+                            <script src="https://keenthemes.com/preview/acidus/vendor/jquery-migrate.min.js"
+                                    type="text/javascript"></script>
+                            <script src="https://keenthemes.com/preview/acidus/vendor/bootstrap/js/bootstrap.min.js"
+                                    type="text/javascript"></script>
+
+                            <!-- PAGE LEVEL PLUGINS -->
+                            <script src="https://keenthemes.com/preview/acidus/vendor/jquery.easing.js"
+                                    type="text/javascript"></script>
+                            <script src="https://keenthemes.com/preview/acidus/vendor/jquery.back-to-top.js"
+                                    type="text/javascript"></script>
+                            <script src="https://keenthemes.com/preview/acidus/vendor/jquery.smooth-scroll.js"
+                                    type="text/javascript"></script>
+                            <script src="https://keenthemes.com/preview/acidus/vendor/jquery.wow.min.js"
+                                    type="text/javascript"></script>
+                            <script src="https://keenthemes.com/preview/acidus/vendor/swiper/js/swiper.jquery.min.js"
+                                    type="text/javascript"></script>
+                            <script src="https://keenthemes.com/preview/acidus/vendor/masonry/jquery.masonry.pkgd.min.js"
+                                    type="text/javascript"></script>
+                            <script src="https://keenthemes.com/preview/acidus/vendor/masonry/imagesloaded.pkgd.min.js"
+                                    type="text/javascript"></script>
+
+                            <!-- PAGE LEVEL SCRIPTS -->
+                            <script src="https://keenthemes.com/preview/acidus/js/layout.min.js"
+                                    type="text/javascript"></script>
+                            <script src="https://keenthemes.com/preview/acidus/js/components/wow.min.js"
+                                    type="text/javascript"></script>
+                            <script src="https://keenthemes.com/preview/acidus/js/components/swiper.min.js"
+                                    type="text/javascript"></script>
+                            <script src="https://keenthemes.com/preview/acidus/js/components/masonry.min.js"
+                                    type="text/javascript"></script>
 
 
 </body>
